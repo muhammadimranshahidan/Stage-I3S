@@ -1,4 +1,8 @@
 % Lecture des donnees depuis le fichier du logiciel 
+% Ce fichier est pour recuperer des donnees venant de deux accelerometres
+% et la masque
+
+
 load Ibra002.mat;
 
 ac1x = Respiratory_Sensor_Port_COM3_Canal_0_g_Amplitude(1,1:end);
