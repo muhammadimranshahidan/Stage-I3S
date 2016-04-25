@@ -20,16 +20,6 @@ column = 1;
     
     % Algorithm 
     
-    D = sqrt((datOutx(5,:)-datOutx(6,:)) .^2+(datOuty(5,:)-datOuty(6,:)) .^2+(datOutz(5,:)-datOutz(6,:)) .^2);
-    dD = diff(D);
-    teta =2*acos(sqrt(1-D .^2/4));
-    dteta = diff(teta);
-    
-    figure (2);
-    subplot(2,1,1)
-    plot(dteta(1,2*80:16*80));
-    subplot(2,1,2)
-     plot(dataOutMask(1,2*80:16*80));
     
     
     
