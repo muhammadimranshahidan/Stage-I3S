@@ -21,12 +21,9 @@ column = 1;
     % Algorithme 
     dataAlgo = algorithme(datOutx,datOuty,datOutz,5,7) ;
     figure(2);
-    subplot(2,1,1);
-    plot(dataAlgo);
-    subplot(2,1,2);
-    plot(dataOutMask);
+    X = dataAlgo;
     
-    
+   plot([dataAlgo' dataOutMask']);
     
     
     
