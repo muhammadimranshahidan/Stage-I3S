@@ -1,3 +1,6 @@
+% Ceci est une fonction pour filter le signal original
+% Le but de ce filtrage est d'enlever le bruit qui pertube le mesure
+
 function [dataOutx,dataOuty,dataOutz,dataOutMask] =  filtre(dataInx,dataIny,dataInz,dataInMask)
 
 fc = 2; %frequence de coupure reel

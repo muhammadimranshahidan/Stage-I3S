@@ -18,9 +18,9 @@ column = 1;
     %  Affichage du signal filtre (3 signaux x,y,z)
     Output(datOutx,datOuty,datOutz,dataOutMask,column,cmax);
     
-    % Algorithm 
+    % Algorithme 
     
-    
+ 
     
     
     
