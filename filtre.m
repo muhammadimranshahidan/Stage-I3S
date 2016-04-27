@@ -7,7 +7,7 @@ fc = 2; %frequence de coupure reel
 fe = 80; %frequence d'echantillonage
 wc = 2*fc/fe; %frequence de coupure du filtre numerique
 
-[b,a] = butter(3,wc); % filtre butterworth d'ordre 2 
+[b,a] = butter(2,wc); % filtre butterworth d'ordre 2 
  
 dataOutx = zeros([10 size(dataInx,2)]);
 dataOuty = zeros([10 size(dataIny,2)]);
