@@ -2,7 +2,7 @@
 
 function Output(dataOutx,dataOuty,dataOutz,data_mask,i,imax)
 
-figure(4);
+figure(2);
 
 for j = i:imax
     subplot(4,3,j)
@@ -10,8 +10,10 @@ for j = i:imax
     X = dataOutx(j,1:end);
     Y = dataOuty(j,1:end);
     Z = dataOutz(j,1:end);
-    plot([X' Y' Z']);
- 
+    plot((0:numel(X)-1)/80,[X' Y' Z']);
+    xlabel('t/s');
+    ylabel('Vacc');
+   
     title(['Acc' num2str(j)] );
 end 
 

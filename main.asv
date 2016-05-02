@@ -1,6 +1,8 @@
 % Recuperation des donnees 
 load readacc.mat;
 
+fs = 80;
+
 accx = ax;
 accy = ay;
 accz = az;
@@ -10,18 +12,21 @@ cmax = 10;
 column = 1;
  
     % Affichage des entrees
-    Input(accx,accy,accz,datamask,column,cmax);
+    Input(accx,accy,accz,datamask);
     
     %  Filtrage du signal (3 signaux x,y,z)
     fc = 2 ;
     fe = 80;
     ordre = 2;
     %[datOutx,datOuty,datOutz,dataOutMask] = filtre(accx,accy,accz,datamask);
+    
     datOutx = filt(accx,ordre,fc,fe);
-    datOuty = filt(accx,ordre,fc,fe);
-    datOutx = filt(accx,ordre,fc,fe);
+    datOuty = filt(accy,ordre,fc,fe);
+    datOutz = filt(accz,ordre,fc,fe);
+    dataOutMask = filt(datamask,ordre,fc,fe);
     
     save output.mat datOutx datOuty datOutz datamask 
+        
     %  Affichage du signal filtre (3 signaux x,y,z)
     Output(datOutx,datOuty,datOutz,dataOutMask,column,cmax);
     
@@ -30,11 +35,19 @@ column = 1;
     
     figure 
     plot (dataAlgo);
-    figure(2);
+    
+    figure(3);
     subplot(2,1,1);
-    plot(dataAlgo);
+    plot((0:numel(dataAlgo)-1)/80,dataAlgo);
+    title(['Accelerometre'] );
+    xlabel('Temps');
+    ylabel('dteta');
+    
     subplot(2,1,2);
-    plot(dataOutMask);
+    plot((0:numel(dataOutMask)-1)/80,dataOutMask);
+    title(['Accelerometre'] );
+    xlabel('Temps');
+    ylabel('Vmask');
  
     
     
