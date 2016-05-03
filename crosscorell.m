@@ -34,13 +34,13 @@ plot(t1,s1norm,'r',t2,s2norm,'b');
 xlabel('Time (s)')
 ylabel('V')
 grid on
-title('Mask and Accelerometer - Teta')
+title('Mask and Accelerometer - AC value normalised - Teta')
 
 [acor,lag] = xcorr(s1,s2,'coeff');
 
 [~,I] = max(abs(acor));
 lagDiff = lag(I);
-timeDiff = lagDiff/fe;'
+timeDiff = lagDiff/fe;
 
 
 figure (2)
@@ -48,8 +48,6 @@ plot(lag/fe,acor)
 grid on
 title('Cross correllation - AC value - Teta - ')
 
-% a3 = gca;
-% a3.XTick = sort([-3000:1000:3000 lagDiff]);
 
 s2al = s2(-lagDiff:end);
 t2al = (0:length(s2al)-1)/80;
@@ -58,11 +56,14 @@ figure(3)
 subplot(3,1,2)
 plot(t2al,s2al)
 title('Acc aligned')
+xlabel('Time (s)')
+ylabel('Vacc')
 grid on
 
 subplot(3,1,1)
 plot(t1,s1,'r')
 title('Mask')
+ylabel('Vmask')
 xlabel('Time (s)')
 grid on
 
@@ -74,5 +75,5 @@ plot(t1,s1_norm,t2al,s2_norm_align);
 grid on
 xlabel('Time (s)')
 ylabel('V/au')
-title('Aligned Signal Mask and Accelerometer - Teta')
+title('Aligned Signal Mask and Accelerometer Normalised - Teta')
 
