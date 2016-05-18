@@ -1,5 +1,6 @@
 % Ceci est une fonction pour calculer la variation de l'angle entre deux
 % vectors
+% C'est une algorithme de LAPI 
 
 function [D,teta,dteta] = algorithme(InX,InY,InZ,acc1,acc2)
 

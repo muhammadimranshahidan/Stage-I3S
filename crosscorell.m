@@ -4,12 +4,15 @@ load process_teta.mat
 load process_D.mat 
 load fil.mat
 
+% C'est un programme pour trouver la cross correlation entre 2 signal 
+% On utilise le signal du masque (spirometre ) pour comparer le signal d'accelerometer 
+
 s1 = dataMaskAC;
 s1norm = dataMaskNorm;
 % s2 = dataD_AC;
 
-s2 = dataTeta_AC;
-s2norm = dataTeta_Norm;
+s2 = dataD_AC;
+s2norm = dataD_Norm;
 
 t1 = (0:length(s1)-1)/fe;
 t2 = (0:length(s2)-1)/fe;
@@ -25,7 +28,7 @@ title('Mask')
 subplot(3,1,2)
 plot(t2,s2)
 grid on
-title('Acc - Teta')
+title('Acc - D ')
 xlabel('Time (s)')
 ylabel('Vacc')
 
@@ -34,7 +37,7 @@ plot(t1,s1norm,'r',t2,s2norm,'b');
 xlabel('Time (s)')
 ylabel('V')
 grid on
-title('Mask and Accelerometer - AC value normalised - Teta')
+title('Mask and Accelerometer - AC value normalised - D')
 
 [acor,lag] = xcorr(s1,s2,'coeff');
 
@@ -46,7 +49,7 @@ timeDiff = lagDiff/fe;
 figure (2)
 plot(lag/fe,acor)
 grid on
-title('Cross correllation - AC value - Teta - ')
+title('Cross correllation - AC value - D - ')
 
 
 s2al = s2(-lagDiff:end);
@@ -75,5 +78,5 @@ plot(t1,s1_norm,t2al,s2_norm_align);
 grid on
 xlabel('Time (s)')
 ylabel('V/au')
-title('Aligned Signal Mask and Accelerometer Normalised - Teta')
+title('Aligned Signal Mask and Accelerometer Normalised - D ')
 
