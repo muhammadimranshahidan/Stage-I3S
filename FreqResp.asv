@@ -1,8 +1,0 @@
-
-clear 
-
-load fil.mat
-load process_D.mat
-
-[y10,x10,Rr] = calculFreqResp_LapiAlgo(dataD_AC,fe);
-
