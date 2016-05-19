@@ -2,7 +2,7 @@
 
 function Input(dataInx,dataIny,dataInz,data_mask)
 
-figure(1);
+
 
 for j = 1:10
     subplot(4,3,j)

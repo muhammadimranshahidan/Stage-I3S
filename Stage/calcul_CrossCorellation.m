@@ -8,7 +8,7 @@ function  [Max,timeDiff] = calcul_CrossCorellation(data1,data1norm,data2,data2no
 t1 = (0:length(data1)-1)/fe;
 t2 = (0:length(data2)-1)/fe;
 
-figure(1)
+figure(3)
 subplot(3,1,1)
 plot(t1,data1,'r');
 grid on
@@ -37,7 +37,7 @@ lagDiff = lag(I);
 timeDiff = lagDiff/fe;
 
 
-figure (2)
+figure (4)
 plot(lag/fe,acor)
 grid on
 title('Cross correllation - AC value - D - ')
@@ -46,7 +46,7 @@ title('Cross correllation - AC value - D - ')
 data2al = data2(-lagDiff:end);
 t2al = (0:length(data2al)-1)/80;
 
-figure(3)
+figure(5)
 subplot(3,1,2)
 plot(t2al,data2al)
 title('Acc aligned')
